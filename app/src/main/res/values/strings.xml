@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="action_settings">Settings</string>
+    <string name="input_error">您輸入的數字有誤(不等於4個)</string>
+    <string name="input_error2">您輸入的數字有重複</string>
+    <string name="result">猜測結果為：</string>
+    <string name="ansre">答案已重置</string>
+</resources>
