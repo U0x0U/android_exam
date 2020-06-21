@@ -14,10 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.media.SoundPool;
-import android.media.AudioAttributes;
-import android.media.AudioManager;
-//import com.google.android.gms.maps.MapFragment;
+import android.media.MediaPlayer;
+
 
 public class MainActivity extends AppCompatActivity {
     TextView result;
@@ -144,6 +142,8 @@ public class MainActivity extends AppCompatActivity {
                 return result;
             } else {
                 result = result + counta + "A" + countb + "B" + "\n答案是：" + ans;
+                MediaPlayer mp = MediaPlayer.create(MainActivity.this, R.raw.shoot2);
+                mp.start();
                 return result;
             }
         }
