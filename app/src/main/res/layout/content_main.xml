@@ -122,12 +122,12 @@
             app:layout_constraintHorizontal_bias="0.8"
             app:layout_constraintStart_toEndOf="@+id/linearLayout"
             app:layout_constraintTop_toBottomOf="@+id/his" />
-        <fragment
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:name="com.google.android.gms.maps.MapFragment"
-            android:id="@+id/map"
-            android:layout_width="match_parent"
-            android:layout_height="650px"/>
+<!--        <fragment-->
+<!--            xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--            android:name="com.google.android.gms.maps.MapFragment"-->
+<!--            android:id="@+id/map"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="650px"/>-->
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
