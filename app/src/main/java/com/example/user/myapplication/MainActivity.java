@@ -17,7 +17,7 @@ import android.widget.Toast;
 import android.media.SoundPool;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
-import com.google.android.gms.maps.MapFragment;
+//import com.google.android.gms.maps.MapFragment;
 
 public class MainActivity extends AppCompatActivity {
     TextView result;

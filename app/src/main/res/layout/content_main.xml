@@ -130,7 +130,4 @@
             android:layout_height="650px"/>
     </LinearLayout>
 
-
-
-
 </android.support.constraint.ConstraintLayout>
