@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
     int[] answer = new int[4];
     Button showanswer;
     Button answerreset;
-//    SoundPool sp = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
-//    int succeedMusic = sp.load(this, R.raw.shoot2, 1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,7 +144,6 @@ public class MainActivity extends AppCompatActivity {
                 return result;
             } else {
                 result = result + counta + "A" + countb + "B" + "\n答案是：" + ans;
-//                sp.play(succeedMusic, 1.0F, 1.0F, 0, 2, 1);
                 return result;
             }
         }
