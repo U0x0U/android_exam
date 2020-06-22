@@ -1,8 +1,8 @@
 package com.example.user.myapplication;
 
-import android.app.FragmentTransaction;
 import android.os.Bundle;
-
+import android.support.v4.app.FragmentActivity;
+//import androidx.fragment.app.FragmentActivity;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,8 +16,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.media.MediaPlayer;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.Objects;
+
+
+public class MainActivity extends FragmentActivity implements OnMapReadyCallback {
     TextView result;
     Button btn;
     EditText input;
@@ -26,11 +35,14 @@ public class MainActivity extends AppCompatActivity {
     int[] answer = new int[4];
     Button showanswer;
     Button answerreset;
+    private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        Objects.requireNonNull(mapFragment).getMapAsync(MainActivity.this);
         result = (TextView) findViewById(R.id.tv_result);
         input = (EditText) findViewById(R.id.et_input);
         btn = (Button) findViewById(R.id.btn_str);
@@ -42,6 +54,14 @@ public class MainActivity extends AppCompatActivity {
         tv_showanswer = findViewById(R.id.tv_showanswer);
         history = findViewById(R.id.guess_history);
         GenerateAnswer();
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        LatLng tw = new LatLng(24.16, 120.45);
+        mMap.addMarker(new MarkerOptions().position(tw).title("Marker in TW"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(tw));
     }
 
     private void GenerateAnswer() {
@@ -148,9 +168,4 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
-//    mMapFragment = MapFragment.newInstance();
-//    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-//    fragmentTransaction.add(R.id.my_container, mMapFragment);
-//    fragmentTransaction.commit();
-
 }
